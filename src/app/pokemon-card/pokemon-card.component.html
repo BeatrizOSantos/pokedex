@@ -3,20 +3,22 @@
   <!-- EX: Bloco -> pokemon-card
   Elemento -> image -->
   <div class="pokemon-card__img">
-    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" alt="Pokemon Image">
+    <img [src]="pokemon.image" alt="Pokemon Image">
   </div>
 
   <div class="pokemon-card__number">
-    Nº001
+    Nº {{ leadingZero(pokemon.number) }}
   </div>
 
   <div class="pokemon-card__name">
-    Bulbasaur
+    {{ pokemon.name }}
   </div>
 
   <div class="pokemon-card__types">
-  <!-- Modificador repete o nome do block e o element e coloca uma tag de '--' -->
-    <div class="pokemon-card__type --grass">Grass</div>
-    <div class="pokemon-card__type --poison">Poison</div>
+    <!-- Modificador repete o nome do block e o element e coloca uma tag de '--' -->
+    <div class="pokemon-card__type" *ngFor="let type of pokemon.types"
+      [class]="'pokemon-card__type --' + type.toLowerCase()">
+      {{type}}
+    </div>
   </div>
 </div>
