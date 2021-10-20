@@ -1,3 +1,5 @@
 <body>
-<app-pokemon-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></app-pokemon-card>
+<app-pokemon-card
+  *ngFor="let pokemon of PokemonService.pokemons"
+  [pokemon]="pokemon"></app-pokemon-card>
 </body>
