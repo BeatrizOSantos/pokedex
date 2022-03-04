@@ -7,6 +7,7 @@ export interface Pokemon {
   types: Type[];
 }
 
+// Recebe um pokemon qualquer e retorna o caminho com o número exato do pokemon para localizar a imagem correta
 export function getPokemonImage(pokemon: Pokemon): string {
   return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${getPokemonNumber(pokemon)}.png`;
 }

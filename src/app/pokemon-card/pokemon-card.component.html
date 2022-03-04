@@ -1,3 +1,4 @@
+<!-- O *ngIf faz com que a estrutura só seja exibida caso um pokemon exista e esteja sendo retornado -->
 <div class="pokemon-card" *ngIf="pokemon">
   <!-- Essa estrutura de __ se chama Block, Elements and Modifiers(BEM). O Bem define que a gente precisa ter um BLOCO que possui significado por si só, um ELEMENTO que possui significado somente dentro desse bloco e um MODIFICADOR em casos de elementos que vão possuir modificações -->
   <!-- EX: Bloco -> pokemon-card
@@ -22,6 +23,7 @@
 
   <div class="pokemon-card__types">
     <!-- Modificador repete o nome do block e o element e coloca uma tag de '--' -->
+    <!-- *ngFor é baseado na pokemon.types -->
     <div class="pokemon-card__type"
          *ngFor="let type of pokemon.types" [class]="'pokemon-card__type --' + type.toLowerCase()">
       {{ type }}

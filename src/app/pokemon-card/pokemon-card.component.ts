@@ -16,6 +16,7 @@ export class PokemonCardComponent implements OnInit {
   @Input()
   public pokemon: Pokemon;
 
+  // Tornando as funções do componente pokemon-list disponíveis a esse componente também
   public getPokemonImage = getPokemonImage;
 
   public getPokemonNumber = getPokemonNumber;

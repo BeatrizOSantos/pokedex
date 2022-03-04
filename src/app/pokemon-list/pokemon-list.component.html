@@ -1,4 +1,5 @@
 <body>
+  <!-- Quando a lista é carregada ela vai direto no service (PokemonService) e pega a lista de pokemons -->
 <app-pokemon-card
   *ngFor="let pokemon of PokemonService.pokemons"
   [pokemon]="pokemon"></app-pokemon-card>

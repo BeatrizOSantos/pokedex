@@ -8,10 +8,11 @@ import { PokemonService } from '../../services/pokemon.service';
 })
 export class PokemonListComponent implements OnInit {
 
+  // Assim que esse elemento for construido eu quero ter uma variável pública PokemonService do tipo PokemonService
   constructor(
     public PokemonService: PokemonService,
     ) { }
-
+    //Esse PokemonService toda vez que construir vai chamar a classe em services que vai pegar um httpClient pra fazer uma requisição para a web
   ngOnInit(): void {
   }
 
