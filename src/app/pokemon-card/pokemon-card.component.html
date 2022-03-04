@@ -1,22 +1,32 @@
-<div class="pokemon-card">
+<!-- O *ngIf faz com que a estrutura só seja exibida caso um pokemon exista e esteja sendo retornado -->
+<div class="pokemon-card" *ngIf="pokemon">
   <!-- Essa estrutura de __ se chama Block, Elements and Modifiers(BEM). O Bem define que a gente precisa ter um BLOCO que possui significado por si só, um ELEMENTO que possui significado somente dentro desse bloco e um MODIFICADOR em casos de elementos que vão possuir modificações -->
   <!-- EX: Bloco -> pokemon-card
   Elemento -> image -->
-  <div class="pokemon-card__img">
-    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" alt="Pokemon Image">
+  <div class="pokemon-card__image">
+    <!--    <img-->
+    <!--      [src]="pokemon.image"-->
+    <!--      alt="Pokemon Image">-->
+
+    <img
+      [src]="getPokemonImage(pokemon)"
+      alt="Pokemon Image">
   </div>
 
   <div class="pokemon-card__number">
-    Nº001
+    Nº {{ getPokemonNumber(pokemon) }}
   </div>
 
   <div class="pokemon-card__name">
-    Bulbasaur
+    {{ pokemon.name }}
   </div>
 
   <div class="pokemon-card__types">
-  <!-- Modificador repete o nome do block e o element e coloca uma tag de '--' -->
-    <div class="pokemon-card__type--grass">Grass</div>
-    <div class="pokemon-card__type--poison">Poison</div>
+    <!-- Modificador repete o nome do block e o element e coloca uma tag de '--' -->
+    <!-- *ngFor é baseado na pokemon.types -->
+    <div class="pokemon-card__type"
+         *ngFor="let type of pokemon.types" [class]="'pokemon-card__type --' + type.toLowerCase()">
+      {{ type }}
+    </div>
   </div>
 </div>
